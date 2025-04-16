@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Container, Row, Col, Carousel, Card, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+type Image = {
+  url: string;
+};
+
 const Home = () => {
-  type Image = {
-    url: string;
-  };
-  
+
   const [images, setImages] = useState<Image[]>([]);
 
   useEffect(() => {
