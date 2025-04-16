@@ -3,7 +3,11 @@ import { Container, Row, Col, Carousel, Card, Form, Button } from 'react-bootstr
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
-  const [images, setImages] = useState([]);
+  type Image = {
+    url: string;
+  };
+  
+  const [images, setImages] = useState<Image[]>([]);
 
   useEffect(() => {
     const randomImages = Array.from({ length: 3 }, (_, index) => ({
