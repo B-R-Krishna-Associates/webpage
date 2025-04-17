@@ -103,12 +103,16 @@ const Home = () => {
                   and B.G.M. Associates, Chartered Accountants (2021) decided to collaborate.
                 </p>
                 <div className="mt-4">
+                  <Link to={"/services"}>
                   <Button variant="primary" className="me-3">
                     Our Services
                   </Button>
+                  </Link>
+                  <Link to={'/about'}>
                   <Button variant="outline-primary">
                     Meet Our Team
                   </Button>
+                  </Link>
                 </div>
               </div>
             </Col>
@@ -188,9 +192,11 @@ const Home = () => {
                     </div>
                     <Card.Title className="fw-bold mb-3">{service.title}</Card.Title>
                     <Card.Text className="text-muted mb-4">{service.description}</Card.Text>
+                    <Link to={'/services'}>
                     <Button variant="link" className="px-0 text-primary fw-bold">
                       Learn More <FaArrowRight className="ms-2" />
                     </Button>
+                    </Link>
                   </Card.Body>
                 </Card>
               </Col>
@@ -198,9 +204,11 @@ const Home = () => {
           </Row>
 
           <div className="text-center mt-5">
-            <Button variant="outline-primary" size="lg">
-              View All Services
-            </Button>
+            <Link to={'/services'}>
+              <Button variant="outline-primary" size="lg">
+                View All Services
+              </Button>
+            </Link>
           </div>
         </Container>
       </section>
