@@ -1,34 +1,30 @@
-import { useEffect, useState } from 'react';
-import { Container, Row, Col, Carousel, Card, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Card, Form, Button, ListGroup } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-type Image = {
-  url: string;
-};
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
+import crouselImg1 from '../assets/images/crousel-img-1.jpg';
+import crouselImg2 from '../assets/images/crousel-img-2.jpg';
+import crouselImg3 from '../assets/images/crousel-img-3.jpg';
+import HomeAboutImg from '../assets/images/home-about-img.jpg';
+import Arrow from '../assets/images/arrow.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-
-  const [images, setImages] = useState<Image[]>([]);
-
-  useEffect(() => {
-    const randomImages = Array.from({ length: 3 }, (_, index) => ({
-      url: `https://picsum.photos/seed/pnb${index + 1}/1200/400`,
-    }));
-    setImages(randomImages);
-  }, []);
 
   const services = [
     {
       title: 'Audit & Assurance',
       description: 'External audit as per statutory requirements and internal reviews.',
+      icon: '📊'
     },
     {
       title: 'Taxation and Corporate Law',
       description: 'Corporate & personal tax planning and compliance.',
+      icon: '💼'
     },
     {
       title: 'Corporate & Financial Advisory',
       description: 'Restructuring, joint ventures, and strategic financial planning.',
+      icon: '📈'
     },
   ];
 
@@ -36,202 +32,469 @@ const Home = () => {
     {
       name: 'John Doe',
       title: 'CEO, ExampleCorp',
-      message:
-        'P. & B. Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
+      message: 'P. & B. Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
+      avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
     },
     {
       name: 'Jane Smith',
       title: 'COO, Tech Solutions',
-      message:
-        'Exceptional service! Their advice has been pivotal in navigating complex tax challenges.',
+      message: 'Exceptional service! Their advice has been pivotal in navigating complex tax challenges.',
+      avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
     },
   ];
 
   return (
-    <div>
-      {/* Carousel */}
-      <div className="position-relative">
-        <Carousel indicators nextLabel="›" prevLabel="‹">
-          {images.map((img, index) => (
+    <div className="home-page">
+      {/* Hero Carousel */}
+      <section className="hero-section">
+        <Carousel fade indicators nextLabel="›" prevLabel="‹">
+          {[crouselImg1, crouselImg2, crouselImg3].map((img, index) => (
             <Carousel.Item key={index}>
-              <img
-                className="d-block w-100"
-                src={img.url}
-                alt={`Slide ${index + 1}`}
-                style={{ height: '400px', objectFit: 'cover' }}
-              />
+              <div className="carousel-image-container">
+                <img
+                  className="d-block w-100 h-100"
+                  src={img}
+                  alt={`Slide ${index + 1}`}
+                />
+                <div className="carousel-overlay">
+                  <Container>
+                    <h1 className="display-6 fw-bold text-white">Professional Accounting Solutions</h1>
+                    <p className="lead text-white">Trusted financial expertise for your business growth</p>
+                    <Link to={'/services'}>
+                      <Button variant="primary" className="mt-3">
+                        Get Started <FaArrowRight className="ms-2" />
+                      </Button>
+                    </Link>
+                  </Container>
+                </div>
+              </div>
             </Carousel.Item>
           ))}
         </Carousel>
-        <style>{`
-          .carousel-indicators {
-            bottom: 10px;
-            justify-content: center;
-          }
-          .carousel-indicators [data-bs-target] {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #000;
-            opacity: 0.5;
-          }
-          .carousel-indicators .active {
-            opacity: 1;
-            background-color: #004080;
-          }
-        `}</style>
-      </div>
+      </section>
 
       {/* About Section */}
-      <Container className="py-5" style={{ width: '100%', padding: '0 15px' }}>
-        <Row className="align-items-center g-4">
-          <Col md={6}>
-            <img
-              src="https://picsum.photos/seed/about/600/400"
-              alt="About"
-              className="img-fluid rounded"
-            />
-          </Col>
-          <Col md={6}>
-            <h2 className="fw-bold mb-3">About P. & B. Associates</h2>
-            <p style={{ lineHeight: '1.8' }}>
-              P. & B. Associates, Chartered Accountant; in existence from 2022 under the laws of Nepal;
-              is a partnership firm established after two proprietorship firms: Pratik Khanal & Associates (2017)
-              and B.G.M. Associates, Chartered Accountants (2021) decided to collaborate. Partners: FCA Pratik Khanal
-              and CA Birendra Gharti Magar. Our office is located in Thapagaun, Kathmandu.
-            </p>
-            <Button variant="outline-primary">Explore More</Button>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* Mission & Vision Section */}
-      <Container className="py-5" style={{ width: '100%', padding: '0 15px' }}>
-        <Row className="align-items-center g-4 flex-md-row-reverse">
-          <Col md={6}>
-            <img
-              src="https://picsum.photos/seed/missionvision/600/450"
-              alt="Mission Vision"
-              className="img-fluid rounded"
-            />
-          </Col>
-          <Col md={6}>
-            <h3 className="fw-bold mb-3">Our Mission & Vision</h3>
-            <p>
-              To strive for excellence and provide high-quality services adhering to values, principles,
-              and the code of ethics per ICAN & The Chartered Accountants Act 1997.
-              <br /><br />
-              To be a proactive and reliable firm offering complete services in Auditing, Assurance, Advisory,
-              and Taxation. We aim to stay ahead in the economy and deliver consistent, prompt quality services
-              including outsourced accounting, tax consulting, and payroll.
-            </p>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* Services Section */}
-      <Container className="py-5" style={{ width: '100%', padding: '0 15px' }}>
-        <h2 className="text-center fw-bold mb-4">Our Services</h2>
-        <p className="text-center w-75 mx-auto">
-          We provide a full range of professional services in the field of Auditing, Assurance, Advisory,
-          and Taxation. Our goal is to support clients with up-to-date knowledge and consistent solutions.
-        </p>
-        <Row className="mt-4">
-          {services.map((service, idx) => (
-            <Col md={4} className="mb-4" key={idx}>
-              <Card className="h-100 border p-3">
-                <Card.Body>
-                  <Card.Title className="fw-bold">{service.title}</Card.Title>
-                  <Card.Text>{service.description}</Card.Text>
-                  <Button variant="link" size="sm">Explore More</Button>
-                </Card.Body>
-              </Card>
+      <section className="py-5 bg-light">
+        <Container>
+          <Row className="align-items-center g-5">
+            <Col md={6}>
+              <div className="about-image-wrapper position-relative">
+                <img
+                  src={HomeAboutImg}
+                  alt="About"
+                  className="img-fluid rounded shadow"
+                />
+                <div className="experience-badge text-white p-3 rounded shadow">
+                  <h3 className="mb-0">5+</h3>
+                  <p className="mb-0">Years Experience</p>
+                </div>
+              </div>
             </Col>
-          ))}
-        </Row>
-      </Container>
-
-      {/* Testimonials Section */}
-      <Container className="py-5" style={{ width: '100%', padding: '0 15px' }}>
-        <h2 className="text-center fw-bold mb-4">What Our Clients Say</h2>
-        <Row className="g-4">
-          {testimonials.map((testimonial, idx) => (
-            <Col md={6} key={idx}>
-              <Card className="border p-4">
-                <Card.Body>
-                  <Card.Text>
-                    <i>"{testimonial.message}"</i>
-                  </Card.Text>
-                  <Card.Footer className="text-muted">
-                    <strong>{testimonial.name}</strong><br />
-                    <small>{testimonial.title}</small>
-                  </Card.Footer>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-
-      {/* Get in Touch Section */}
-      <Container className="py-5" style={{ width: '100%', padding: '0 15px' }}>
-        <h2 className="fw-bold text-center mb-4">Get in Touch</h2>
-        <Row className="g-4">
-          <Col md={6}>
-            <h5 className="fw-bold">Mail Us:</h5>
-            <p>info@pnb.com.np</p>
-
-            <h5 className="fw-bold mt-3">Visit Us:</h5>
-            <p>Thapagaun, Kathmandu, Nepal</p>
-
-            <h5 className="fw-bold mt-3">Phone Us:</h5>
-            <p>+977-9851205670</p>
-          </Col>
-
-          <Col md={6}>
-            <div>
-              <h5 className="fw-bold text-center mb-3">Send Us a Message</h5>
-              <Form>
-                <Form.Group className="mb-3" controlId="formName">
-                  <Form.Control
-                    type="text"
-                    placeholder="Full Name"
-                    className="px-3 py-2"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Control
-                    type="email"
-                    placeholder="Email Address"
-                    className="px-3 py-2"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formMessage">
-                  <Form.Control
-                    as="textarea"
-                    rows={8}
-                    placeholder="Message"
-                    className="px-3 py-2"
-                  />
-                </Form.Group>
-
-                <div className="text-center">
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    className="w-100 px-3 py-3 fw-bold"
-                    style={{ background: 'rgb(15, 71, 97)', borderColor: '#003366' }}
-                  >
-                    Send Message
+            <Col md={6}>
+              <div className="ps-md-4">
+                <span className="text-uppercase text-primary fw-bold">About Us</span>
+                <h2 className="fw-bold mb-4">B.R. Krishna & Associates</h2>
+                <p className="lead mb-4">
+                  Professional Chartered Accountants serving businesses in Nepal since 2022.
+                </p>
+                <p style={{ lineHeight: '1.8' }}>
+                  B.R. Krishna & Associates, Chartered Accountant; in existence from 2022 under the laws of Nepal;
+                  is a partnership firm established after two proprietorship firms: Pratik Khanal & Associates (2017)
+                  and B.G.M. Associates, Chartered Accountants (2021) decided to collaborate.
+                </p>
+                <div className="mt-4">
+                  <Button variant="primary" className="me-3">
+                    Our Services
+                  </Button>
+                  <Button variant="outline-primary">
+                    Meet Our Team
                   </Button>
                 </div>
-              </Form>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-5">
+        <Container>
+          <Row className="align-items-center g-5">
+            <Col md={6}>
+              <div className="pe-md-4">
+                <span className="text-uppercase text-primary fw-bold">Our Values</span>
+                <h2 className="fw-bold mb-4">Mission & Vision</h2>
+
+                <div className="d-flex mb-4">
+                  <div className="me-4">
+                    <div className="mission-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center">
+                      <span className="fs-4">🎯</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Our Mission</h4>
+                    <p className="text-muted">
+                      To strive for excellence and provide high-quality services adhering to values, principles,
+                      and the code of ethics per ICAN & The Chartered Accountants Act 1997.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="d-flex">
+                  <div className="me-4">
+                    <div className="vision-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center">
+                      <span className="fs-4">👁️</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Our Vision</h4>
+                    <p className="text-muted">
+                      To be a proactive and reliable firm offering complete services in Auditing, Assurance, Advisory,
+                      and Taxation. We aim to stay ahead in the economy and deliver consistent, prompt quality services.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col md={6}>
+              <img
+                src={Arrow}
+                alt="Mission Vision"
+                className="img-fluid rounded shadow"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-5 bg-light">
+        <Container>
+          <div className="text-center mb-5">
+            <span className="text-uppercase text-primary fw-bold">What We Offer</span>
+            <h2 className="fw-bold mb-3">Our Services</h2>
+            <p className="lead mx-auto" style={{ maxWidth: '700px' }}>
+              Comprehensive financial solutions tailored to your business needs
+            </p>
+          </div>
+
+          <Row className="g-4">
+            {services.map((service, idx) => (
+              <Col lg={4} md={6} key={idx}>
+                <Card className="h-100 border-0 shadow-sm hover-shadow transition-all">
+                  <Card.Body className="p-4">
+                    <div className="service-icon mb-4">
+                      <span className="display-4">{service.icon}</span>
+                    </div>
+                    <Card.Title className="fw-bold mb-3">{service.title}</Card.Title>
+                    <Card.Text className="text-muted mb-4">{service.description}</Card.Text>
+                    <Button variant="link" className="px-0 text-primary fw-bold">
+                      Learn More <FaArrowRight className="ms-2" />
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+
+          <div className="text-center mt-5">
+            <Button variant="outline-primary" size="lg">
+              View All Services
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-5">
+        <Container>
+          <div className="text-center mb-5">
+            <span className="text-uppercase text-primary fw-bold">Testimonials</span>
+            <h2 className="fw-bold mb-3">What Our Clients Say</h2>
+            <p className="lead mx-auto" style={{ maxWidth: '700px' }}>
+              Don't just take our word for it - hear from our satisfied clients
+            </p>
+          </div>
+
+          <Row className="g-4">
+            {testimonials.map((testimonial, idx) => (
+              <Col md={6} key={idx}>
+                <Card className="h-100 border-0 shadow-sm">
+                  <Card.Body className="p-4">
+                    <div className="d-flex mb-4">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="rounded-circle me-3"
+                        width="60"
+                        height="60"
+                      />
+                      <div>
+                        <h5 className="mb-1">{testimonial.name}</h5>
+                        <p className="text-muted mb-0">{testimonial.title}</p>
+                      </div>
+                    </div>
+                    <div className="testimonial-content position-relative">
+                      <FaQuoteLeft className="text-primary opacity-25 position-absolute" style={{ top: 0, left: -8, fontSize: '3rem' }} />
+                      <Card.Text className="ps-5 mb-0">
+                        <i>"{testimonial.message}"</i>
+                      </Card.Text>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Get in Touch Section */}
+      <section className="py-5 bg-light">
+        <Container>
+          <Row className="g-4">
+            <Col lg={5}>
+              <h2 className="fw-bold mb-4 text-uppercase" style={{
+                color: "#0F4761"
+              }}>Contact Information</h2>
+              <p className="lead mb-5">
+                Reach out to us for professional accounting services and financial advice.
+              </p>
+
+              <ListGroup variant="flush" className="bg-transparent">
+                <ListGroup.Item className="bg-transparent border-secondary px-0 py-3">
+                  <div className="d-flex">
+                    <div className="me-3 text-primary">
+                      <FaMapMarkerAlt size={20} />
+                    </div>
+                    <div>
+                      <h5 className="mb-1 fw-bold" style={{
+                        color: "#0F4761"
+                      }}>Our Location</h5>
+                      <p className="mb-0">Thapagaun, Kathmandu, Nepal</p>
+                    </div>
+                  </div>
+                </ListGroup.Item>
+
+                <ListGroup.Item className="bg-transparent border-secondary px-0 py-3">
+                  <div className="d-flex">
+                    <div className="me-3 text-primary">
+                      <FaEnvelope size={20} />
+                    </div>
+                    <div>
+                      <h5 className="mb-1 fw-bold" style={{
+                        color: "#0F4761"
+                      }}>Email Us</h5>
+                      <p className="mb-0">info@pnb.com.np</p>
+                    </div>
+                  </div>
+                </ListGroup.Item>
+
+                <ListGroup.Item className="bg-transparent border-secondary px-0 py-3">
+                  <div className="d-flex">
+                    <div className="me-3 text-primary">
+                      <FaPhone size={20} />
+                    </div>
+                    <div>
+                      <h5 className="mb-1 fw-bold" style={{
+                        color: "#0F4761"
+                      }}>Call Us</h5>
+                      <p className="mb-0">+977-9851205670</p>
+                    </div>
+                  </div>
+                </ListGroup.Item>
+              </ListGroup>
+
+              <div className="mt-5">
+                <h5 className="mb-3 fw-bold text-uppercase" style={{
+                  color: "#0F4761"
+                }}>Business Hours</h5>
+                <p className="mb-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <p className="mb-0">Saturday: 10:00 AM - 2:00 PM</p>
+              </div>
+            </Col>
+
+            <Col lg={7}>
+              <Card className="border-0 shadow-sm">
+                <Card.Body className="p-4 p-lg-5">
+                  <h3 className="fw-bold mb-4 text-center text-uppercase" style={{
+                    color: "#0F4761"
+                  }}>Send Us a Message</h3>
+                  <Form>
+                    <Row className="g-3">
+                      <Col md={6}>
+                        <Form.Group controlId="formName">
+                          <Form.Label>Full Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="Your name"
+                            className="px-3 py-2"
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col md={6}>
+                        <Form.Group controlId="formEmail">
+                          <Form.Label>Email Address</Form.Label>
+                          <Form.Control
+                            type="email"
+                            placeholder="Your email"
+                            className="px-3 py-2"
+                          />
+                        </Form.Group>
+                      </Col>
+                    </Row>
+
+                    <Form.Group className="mt-3" controlId="formSubject">
+                      <Form.Label>Subject</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Subject"
+                        className="px-3 py-2"
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mt-3" controlId="formMessage">
+                      <Form.Label>Message</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={5}
+                        placeholder="Your message"
+                        className="px-3 py-2"
+                      />
+                    </Form.Group>
+
+                    <div className="text-center mt-4">
+                      <Button
+                        variant="primary"
+                        type="submit"
+                        className="px-4 py- fw-bold w-100 text-uppercase"
+                      >
+                        Send Message
+                      </Button>
+                    </div>
+                  </Form>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Custom CSS */}
+      <style jsx>{`
+  .home-page {
+    overflow-x: hidden;
+  }
+
+  .hero-section {
+    position: relative;
+  }
+
+  .carousel-image-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background-color:rgb(2, 29, 41);
+  }
+
+  .carousel-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+  }
+
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 15%; /* Added to prevent overlap with carousel controls */
+  }
+
+  .btn-primary {
+    background-color: #0F4761 !important;
+    border-color: #0F4761 !important;
+  }
+
+  .btn-outline-primary {
+    color: #0F4761 !important;
+    border-color: #0F4761 !important;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #0F4761 !important;
+    color: white !important;
+  }
+
+  .text-primary {
+    color: #0F4761 !important;
+  }
+
+  .about-image-wrapper {
+    position: relative;
+  }
+
+  .experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-weight: bolder;
+    width: fit-content;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #0F4761 !important;
+    
+  }
+
+  .mission-icon,
+  .vision-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .service-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .hover-shadow:hover .service-icon {
+    transform: scale(1.1);
+    transform: rotate(5deg)
+  }
+
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 767.98px) {
+  .carousel-image-container {
+    height: 200px; /* Decrease height on mobile */
+    min-height: 300px; /* Ensure minimum height is set */
+  }
+
+  .carousel-image-container img {
+    height: 100%; /* Ensure image covers the container but does not overflow */
+    object-fit: cover; /* Keep image aspect ratio intact */
+  }
+
+  .carousel-overlay {
+    display: none
+  }
+}
+
+`}</style>
+
     </div>
   );
 };

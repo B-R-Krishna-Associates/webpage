@@ -27,7 +27,7 @@ const Footer = () => {
             <h6 className="fw-bold mb-3">Explore</h6>
             <ul className="list-unstyled" style={{ fontSize: '15px' }}>
               <li><a href="/blogs" className="text-white text-decoration-none">Blogs</a></li>
-              <li><a href="/career" className="text-white text-decoration-none">Career</a></li>
+              <li><a href="/careers" className="text-white text-decoration-none">Career</a></li>
               <li><a href="/team" className="text-white text-decoration-none">Team</a></li>
               <li><a href="/contact" className="text-white text-decoration-none">Contact</a></li>
             </ul>
