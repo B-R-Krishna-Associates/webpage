@@ -79,7 +79,7 @@ const Services = () => {
                 <div className="hero-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                     <div className="text-center px-3">
                         <h1 className="display-4 fw-bold mb-4">Our Services</h1>
-                        <p className="lead mb-0">Navigating your business through compliance, audit, and strategic consulting with excellence</p>
+                        <p className="lead mb-0">Navigating your business through compliance, audit, and strategic consulting with excellence lorem</p>
                     </div>
                 </div>
             </section>
@@ -87,11 +87,11 @@ const Services = () => {
             {/* Services Section */}
             <section className="services-section py-5 bg-light">
                 <Container>
-                    <Row className="mb-4">
+                    <Row className="mb-4 text-uppercase">
                         <Col>
                             <h2 className="text-center fw-bold" style={{
                                 color: "#0F4761"
-                            }}>Our Main Services</h2>
+                            }}>Our Core Services</h2>
                         </Col>
                     </Row>
                     <Row>

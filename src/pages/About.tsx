@@ -1,217 +1,148 @@
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { FaUserTie, FaGlobe, FaHistory, FaChartLine, FaHandsHelping, FaBuilding } from 'react-icons/fa';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { FaEye, FaBullseye, FaUsers, FaUserTie, FaShieldAlt } from 'react-icons/fa';
+import AboutHero from '../assets/images/about-hero.jpg';
 
 const About = () => {
   return (
-    <>
-      {/* About Us Header Section */}
-      <section className="py-5 bg-gradient text-white text-center">
-        <Container>
-          <h2 className="display-4 fw-bold text-uppercase">About B.R. Krishna & Associates</h2>
-          <p className="lead mb-4">Innovating Financial Solutions with Integrity and Excellence</p>
-        </Container>
+    <div className="about-page">
+      {/* Hero Section */}
+      <section className="hero-section text-white position-relative" style={{ backgroundColor: "rgb(2, 29, 41)" }}>
+        <img
+          src={AboutHero}
+          alt="Hero background"
+          className="w-100 hero-img"
+        />
+        <div className="hero-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+          <div className="text-center px-3">
+            <h1 className="display-4 fw-bold">About Us</h1>
+            <p className="lead">B.R. Krishna & Associates – Chartered Accountants in Nepal</p>
+          </div>
+        </div>
       </section>
 
-      {/* Company Overview Section */}
-      <section className="py-5 bg-light">
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={6}>
-              <h3 className="fw-bold mb-4">Company Overview</h3>
-              <p>
-                Founded in 2022, B.R. Krishna & Associates is a full-service Chartered Accountancy firm based in Nepal. Our mission is to provide expert financial guidance through a comprehensive suite of services including auditing, taxation, financial advisory, and consultancy. With a client-centric approach, we serve businesses of all sizes, including multinational corporations, non-profits, and startups.
-              </p>
-              <p>
-                Our team combines expertise with innovation, ensuring that every client receives customized solutions tailored to their unique needs. We continuously invest in technology and research to stay ahead of the industry.
-              </p>
-            </Col>
-            <Col lg={6}>
-              <img
-                src="https://picsum.photos/seed/brkcompanyoverview/600/400"
-                alt="Company Overview"
-                className="img-fluid rounded shadow-lg"
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      {/* About Section */}
+      <Container className="py-5">
+        <Row>
+          <Col md={12}>
+            <h2 className="fw-bold mb-4">Who We Are</h2>
+            <p>
+              B.R. Krishna & Associates is a leading firm of Chartered Accountants in Nepal, delivering a full spectrum
+              of audit, advisory, and consulting services. Our vision is to be the recognized leader in professional
+              services by:
+            </p>
+            <ul>
+              <li>Fostering an inspiring and empowering work environment for our people</li>
+              <li>Providing innovative and value-driven advisory solutions to our clients</li>
+              <li>Achieving outstanding financial performance with integrity</li>
+            </ul>
+            <p>
+              With steady growth over the years, we proudly serve a broad and diverse portfolio of clients—from
+              ambitious entrepreneurial ventures to multinational corporations and publicly listed companies—across a
+              wide range of industries.
+            </p>
+            <p>
+              Our firm is built on the core principles of integrity, professionalism, collaboration, and client-centric
+              service. Our team comprises carefully selected professionals who are benchmarked against the highest
+              standards in the industry.
+            </p>
+            <p>
+              We are deeply committed to nurturing talent within our firm and building long-term, trust-based
+              relationships with our clients. Beyond business, we value community engagement and strive to make a
+              meaningful impact in people’s lives.
+            </p>
+          </Col>
+        </Row>
+      </Container>
 
-      {/* Our Leadership Section */}
-      <section className="py-5 bg-white">
-        <Container>
-          <Row>
-            <Col md={12} className="text-center mb-4">
-              <h3 className="fw-bold mb-4">Our Leadership Team</h3>
-              <p className="text-muted">
-                At the core of B.R. Krishna & Associates is a team of visionary leaders committed to transforming the financial sector.
-              </p>
-            </Col>
-          </Row>
-          <Row className="g-4">
-            <Col md={4} className="text-center">
-              <Card className="shadow-lg border-0 rounded-3">
-                <FaUserTie className="display-4 mb-3 text-primary" />
-                <Card.Body>
-                  <Card.Title className="fw-bold">Mr. B.R. Krishna</Card.Title>
-                  <Card.Subtitle className="text-muted">Founder & Managing Partner</Card.Subtitle>
-                  <Card.Text>
-                    With over 30 years of experience in financial services, Mr. Krishna's visionary leadership has guided B.R. Krishna & Associates to become a leader in Nepal’s accounting and consultancy space.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="text-center">
-              <Card className="shadow-lg border-0 rounded-3">
-                <FaUserTie className="display-4 mb-3 text-primary" />
-                <Card.Body>
-                  <Card.Title className="fw-bold">Ms. Aarti Joshi</Card.Title>
-                  <Card.Subtitle className="text-muted">Director of Finance & Strategy</Card.Subtitle>
-                  <Card.Text>
-                    Ms. Joshi brings her expertise in global finance strategies, shaping innovative solutions that help businesses grow and thrive in an ever-changing market.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="text-center">
-              <Card className="shadow-lg border-0 rounded-3">
-                <FaUserTie className="display-4 mb-3 text-primary" />
-                <Card.Body>
-                  <Card.Title className="fw-bold">Mr. Shankar Pandey</Card.Title>
-                  <Card.Subtitle className="text-muted">Director of Operations</Card.Subtitle>
-                  <Card.Text>
-                    Mr. Pandey ensures that our firm operates smoothly, overseeing every internal function to maintain efficiency and quality client service.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* Company Milestones Section */}
-      <section className="py-5 bg-light">
-        <Container>
-          <Row className="text-center mb-5">
-            <Col>
-              <h3 className="fw-bold mb-4">Our Milestones</h3>
-              <p className="lead text-muted">
-                A journey built on trust, innovation, and unwavering commitment to excellence.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <div className="timeline">
-                <div className="timeline-item">
-                  <h5 className="fw-bold">2022: The Beginning</h5>
-                  <p>Founded with a vision to deliver unmatched financial services across Nepal and beyond.</p>
+      {/* Vision & Mission Cards */}
+      <Container className="p-5 bg-light">
+        <Row className="gy-4">
+          <Col md={6}>
+            <Card className="h-100 shadow-sm">
+              <Card.Body>
+                <div className="d-flex align-items-center mb-2">
+                  <FaEye className="me-3 text-primary" size={24} />
+                  <Card.Title className="fw-bold mb-0">Our Vision</Card.Title>
                 </div>
-                <div className="timeline-item">
-                  <h5 className="fw-bold">2023: Expanding Our Reach</h5>
-                  <p>Opened offices in key cities across Nepal, allowing us to serve a broader client base.</p>
+                <Card.Text>
+                  To be the most trusted and respected professional services firm in Nepal, delivering excellence and
+                  innovation with every engagement.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={6}>
+            <Card className="h-100 shadow-sm">
+              <Card.Body>
+                <div className="d-flex align-items-center mb-2">
+                  <FaBullseye className="me-3 text-success" size={24} />
+                  <Card.Title className="fw-bold mb-0">Our Mission</Card.Title>
                 </div>
-                <div className="timeline-item">
-                  <h5 className="fw-bold">2024: International Clients</h5>
-                  <p>Served clients from across the globe, marking a significant milestone in our international expansion.</p>
-                </div>
-                <div className="timeline-item">
-                  <h5 className="fw-bold">2025: Tech-Driven Transformation</h5>
-                  <p>Embraced the latest in AI and data analytics to provide cutting-edge solutions to clients.</p>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+                <Card.Text>
+                  To provide our clients with forward-thinking audit, tax, and advisory services through a dedicated team
+                  of professionals who value integrity, efficiency, and strong client relationships.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
 
-      {/* Our Global Reach Section */}
-      <section className="py-5 bg-white">
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={6}>
-              <h3 className="fw-bold mb-4">Global Reach</h3>
-              <p>
-                With clients across continents and industries, B.R. Krishna & Associates is a trusted partner for businesses worldwide. Our cross-border expertise enables us to offer international-standard services while maintaining a deep understanding of local markets.
-              </p>
-            </Col>
-            <Col lg={6} className="text-center">
-              <FaGlobe className="display-4 text-primary" />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      {/* Why Choose Us */}
+      <Container className="py-5">
+        <h2 className="fw-bold mb-4 text-center">Why Choose B.R. Krishna & Associates?</h2>
+        <Row className="gy-4">
+          <Col md={4}>
+            <Card className="h-100 shadow-sm text-center">
+              <Card.Body>
+                <FaUsers size={40} className="text-info mb-3" />
+                <Card.Title className="fw-bold">Client-Centric Approach</Card.Title>
+                <Card.Text>
+                  We listen, understand, and act with your best interests in mind, ensuring tailor-made solutions for your
+                  business challenges.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4}>
+            <Card className="h-100 shadow-sm text-center">
+              <Card.Body>
+                <FaUserTie size={40} className="text-warning mb-3" />
+                <Card.Title className="fw-bold">Expert Team</Card.Title>
+                <Card.Text>
+                  Our professionals are highly qualified and bring deep knowledge and industry experience to every
+                  engagement.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4}>
+            <Card className="h-100 shadow-sm text-center">
+              <Card.Body>
+                <FaShieldAlt size={40} className="text-danger mb-3" />
+                <Card.Title className="fw-bold">Reliable & Ethical</Card.Title>
+                <Card.Text>
+                  We are committed to integrity, transparency, and ethical practices in every aspect of our service.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
 
-      {/* Our Expertise Section */}
-      <section className="py-5 bg-light">
-        <Container>
-          <Row className="text-center mb-5">
-            <Col>
-              <h3 className="fw-bold mb-4">Our Expertise</h3>
-              <p className="lead text-muted">
-                Offering a diverse range of financial services designed to meet every business need.
-              </p>
-            </Col>
-          </Row>
-          <Row className="g-4">
-            <Col md={4} className="text-center">
-              <FaChartLine className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Business Strategy</h5>
-              <p className="text-muted">We offer strategic guidance to help businesses scale effectively and efficiently.</p>
-            </Col>
-            <Col md={4} className="text-center">
-              <FaHandsHelping className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Financial Advisory</h5>
-              <p className="text-muted">Our expert advisors offer actionable insights that help businesses manage finances better.</p>
-            </Col>
-            <Col md={4} className="text-center">
-              <FaBuilding className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Corporate Structuring</h5>
-              <p className="text-muted">We assist companies in creating efficient structures to optimize their financial outcomes.</p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <style jsx>{`
+        .hero-section {
+          height: 400px;
+          overflow: hidden;
+        }
 
-      {/* Our Core Values Section */}
-      <section className="py-5 bg-white">
-        <Container>
-          <Row className="text-center">
-            <Col>
-              <h3 className="fw-bold mb-4">Our Core Values</h3>
-              <p className="text-muted">
-                We are guided by values that ensure the highest level of professionalism, trust, and client satisfaction.
-              </p>
-            </Col>
-          </Row>
-          <Row className="g-4">
-            <Col md={4} className="text-center">
-              <FaHistory className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Integrity</h5>
-              <p className="text-muted">We maintain transparency and honesty in every interaction with our clients.</p>
-            </Col>
-            <Col md={4} className="text-center">
-              <FaHistory className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Innovation</h5>
-              <p className="text-muted">We are committed to staying at the forefront of financial technology and solutions.</p>
-            </Col>
-            <Col md={4} className="text-center">
-              <FaHistory className="display-4 mb-3 text-primary" />
-              <h5 className="fw-bold">Excellence</h5>
-              <p className="text-muted">We strive for excellence in everything we do, ensuring that our clients receive top-tier service.</p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-5 bg-gradient text-white text-center">
-        <Container>
-          <h3 className="fw-bold mb-4">Let's Work Together</h3>
-          <p className="lead mb-4">Partner with us to drive your business forward with tailored financial solutions.</p>
-          <Button variant="outline-light" size="lg" className="px-4 py-2 rounded-pill">Contact Us Today</Button>
-        </Container>
-      </section>
-    </>
+        .hero-img {
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.3;
+        }
+      `}</style>
+    </div>
   );
 };
 

@@ -85,7 +85,7 @@ const Contact = () => {
                                         <h4 className="h6 mb-1 fw-bold" style={{
                                             color: "#0F4761"
                                         }}>Our Location</h4>
-                                        <p className="text-muted mb-0">123 Business Ave, Suite 456<br />San Francisco, CA 94107</p>
+                                        <p className="text-muted mb-0">Baneshwor, Kathmandu, Nepal</p>
                                     </div>
                                 </div>
 
@@ -97,7 +97,7 @@ const Contact = () => {
                                         <h4 className="h6 mb-1 fw-bold" style={{
                                             color: "#0F4761"
                                         }}>Email Us</h4>
-                                        <p className="text-muted mb-0">info@company.com<br />support@company.com</p>
+                                        <p className="text-muted mb-0">ca.bhatt@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -109,7 +109,7 @@ const Contact = () => {
                                         <h4 className="h6 mb-1 fw-bold" style={{
                                             color: "#0F4761"
                                         }}>Call Us</h4>
-                                        <p className="text-muted mb-0">+1 (555) 123-4567<br />Mon-Fri, 9am-5pm</p>
+                                        <p className="text-muted mb-0">+977-9866702652<br />Sun-Fri, 9am-5pm</p>
                                     </div>
                                 </div>
                             </div>

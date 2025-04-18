@@ -7,6 +7,8 @@ import crouselImg3 from '../assets/images/crousel-img-3.jpg';
 import HomeAboutImg from '../assets/images/home-about-img.jpg';
 import Arrow from '../assets/images/arrow.jpg';
 import { Link } from 'react-router-dom';
+import Testimonail1 from '../assets/images/testimonial-img-1.jpg';
+import Testimonail2 from '../assets/images/testimonial-img-2.jpg'
 
 const Home = () => {
 
@@ -30,16 +32,16 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'John Doe',
-      title: 'CEO, ExampleCorp',
+      name: 'Tilak Raj Bhandari',
+      title: 'CEO, Pearl Softech',
       message: 'P. & B. Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
-      avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+      avatar: Testimonail1
     },
     {
-      name: 'Jane Smith',
-      title: 'COO, Tech Solutions',
+      name: 'Nirajan Basnet',
+      title: 'CEO, Vista Clothings',
       message: 'Exceptional service! Their advice has been pivotal in navigating complex tax challenges.',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+      avatar: Testimonail2
     },
   ];
 
@@ -47,7 +49,7 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Carousel */}
       <section className="hero-section">
-        <Carousel fade indicators nextLabel="›" prevLabel="‹">
+        <Carousel slide indicators>
           {[crouselImg1, crouselImg2, crouselImg3].map((img, index) => (
             <Carousel.Item key={index}>
               <div className="carousel-image-container">
@@ -85,7 +87,7 @@ const Home = () => {
                   className="img-fluid rounded shadow"
                 />
                 <div className="experience-badge text-white p-3 rounded shadow">
-                  <h3 className="mb-0">5+</h3>
+                  <h3 className="mb-0">1+</h3>
                   <p className="mb-0">Years Experience</p>
                 </div>
               </div>
@@ -95,23 +97,23 @@ const Home = () => {
                 <span className="text-uppercase text-primary fw-bold">About Us</span>
                 <h2 className="fw-bold mb-4">B.R. Krishna & Associates</h2>
                 <p className="lead mb-4">
-                  Professional Chartered Accountants serving businesses in Nepal since 2022.
+                  Professional Chartered Accountants serving businesses in Nepal since 2024.
                 </p>
                 <p style={{ lineHeight: '1.8' }}>
-                  B.R. Krishna & Associates, Chartered Accountant; in existence from 2022 under the laws of Nepal;
-                  is a partnership firm established after two proprietorship firms: Pratik Khanal & Associates (2017)
-                  and B.G.M. Associates, Chartered Accountants (2021) decided to collaborate.
+                  B.R. Krishna & Associates is a leading firm of Chartered Accountants in Nepal, delivering a full spectrum of audit, advisory, and consulting services. Our vision is to be the recognized leader in professional services
+                  with steady growth over the years, we proudly serve a broad and diverse portfolio of clients—from ambitious entrepreneurial ventures to multinational corporations and publicly listed companies—across a wide range of industries.
+                  Our firm is built on the core principles of integrity, professionalism, collaboration, and client-centric service.
                 </p>
                 <div className="mt-4">
                   <Link to={"/services"}>
-                  <Button variant="primary" className="me-3">
-                    Our Services
-                  </Button>
+                    <Button variant="primary" className="me-3">
+                      Our Services
+                    </Button>
                   </Link>
                   <Link to={'/about'}>
-                  <Button variant="outline-primary">
-                    Meet Our Team
-                  </Button>
+                    <Button variant="outline-primary">
+                      Meet Our Team
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -193,9 +195,9 @@ const Home = () => {
                     <Card.Title className="fw-bold mb-3">{service.title}</Card.Title>
                     <Card.Text className="text-muted mb-4">{service.description}</Card.Text>
                     <Link to={'/services'}>
-                    <Button variant="link" className="px-0 text-primary fw-bold">
-                      Learn More <FaArrowRight className="ms-2" />
-                    </Button>
+                      <Button variant="link" className="px-0 text-primary fw-bold">
+                        Learn More <FaArrowRight className="ms-2" />
+                      </Button>
                     </Link>
                   </Card.Body>
                 </Card>
@@ -229,21 +231,32 @@ const Home = () => {
               <Col md={6} key={idx}>
                 <Card className="h-100 border-0 shadow-sm">
                   <Card.Body className="p-4">
-                    <div className="d-flex mb-4">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="rounded-circle me-3"
-                        width="60"
-                        height="60"
-                      />
+                    <div className="d-flex mb-4" style={{
+                      alignItems: 'center',
+                    }}>
+                      <div style={{
+                        height: '60px',
+                        width: '60px',
+                        marginRight: '10px'
+                      }}>
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="rounded-circle me-3"
+                          width="100%"
+                          height="100%"
+                          style={{
+                            objectFit: 'cover'
+                          }}
+                        />
+                      </div>
                       <div>
                         <h5 className="mb-1">{testimonial.name}</h5>
                         <p className="text-muted mb-0">{testimonial.title}</p>
                       </div>
                     </div>
                     <div className="testimonial-content position-relative">
-                      <FaQuoteLeft className="text-primary opacity-25 position-absolute" style={{ top: 0, left: -8, fontSize: '3rem' }} />
+                      <FaQuoteLeft className="text-primary opacity-25 position-absolute" style={{ top: 0, left: -12, fontSize: '3rem' }} />
                       <Card.Text className="ps-5 mb-0">
                         <i>"{testimonial.message}"</i>
                       </Card.Text>
@@ -278,7 +291,7 @@ const Home = () => {
                       <h5 className="mb-1 fw-bold" style={{
                         color: "#0F4761"
                       }}>Our Location</h5>
-                      <p className="mb-0">Thapagaun, Kathmandu, Nepal</p>
+                      <p className="mb-0">Baneshwor, Kathmandu, Nepal</p>
                     </div>
                   </div>
                 </ListGroup.Item>
@@ -292,7 +305,7 @@ const Home = () => {
                       <h5 className="mb-1 fw-bold" style={{
                         color: "#0F4761"
                       }}>Email Us</h5>
-                      <p className="mb-0">info@pnb.com.np</p>
+                      <p className="mb-0">ca.bhatt@gmail.com</p>
                     </div>
                   </div>
                 </ListGroup.Item>
@@ -306,7 +319,7 @@ const Home = () => {
                       <h5 className="mb-1 fw-bold" style={{
                         color: "#0F4761"
                       }}>Call Us</h5>
-                      <p className="mb-0">+977-9851205670</p>
+                      <p className="mb-0">+977-9866702652</p>
                     </div>
                   </div>
                 </ListGroup.Item>
@@ -316,8 +329,7 @@ const Home = () => {
                 <h5 className="mb-3 fw-bold text-uppercase" style={{
                   color: "#0F4761"
                 }}>Business Hours</h5>
-                <p className="mb-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                <p className="mb-0">Saturday: 10:00 AM - 2:00 PM</p>
+                <p className="mb-1">Sunday - Friday: 9:00 AM - 5:00 PM</p>
               </div>
             </Col>
 
@@ -503,7 +515,7 @@ const Home = () => {
 
 `}</style>
 
-    </div>
+    </div >
   );
 };
 
