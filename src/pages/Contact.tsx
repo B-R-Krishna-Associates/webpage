@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert, Carousel } from 'react-bootstrap';
-import { Envelope, GeoAlt, Telephone, ArrowRight } from 'react-bootstrap-icons';
+import { Envelope, GeoAlt, Telephone } from 'react-bootstrap-icons';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
     const [validated, setValidated] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -21,7 +21,7 @@ const Contact = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         const form = e.currentTarget;
 
@@ -223,7 +223,6 @@ const Contact = () => {
                                         width="100%"
                                         height="450"
                                         style={{ border: 0 }}
-                                        allowFullScreen=""
                                         loading="lazy"
                                     ></iframe>
                                 </div>
