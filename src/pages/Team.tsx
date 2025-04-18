@@ -2,12 +2,13 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TeamImg from '../assets/images/team-img.jpg';
+import Team1  from '../assets/images/team-1.png';
 
 const teamMembers = [
     {
-        name: 'Pratik Khanal',
-        role: 'Managing Partner',
-        image: 'https://randomuser.me/api/portraits/men/10.jpg',
+        name: 'CA. Krishna Raj Bhatt',
+        role: 'Proprietor',
+        image: Team1,
         socialLinks: {
             linkedin: '#',
             facebook: '#',
