@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const Footer = () => {
   return (
     <footer style={{ backgroundColor: '#0F4761', color: '#fff', padding: '60px 0' }}>
@@ -17,10 +15,10 @@ const Footer = () => {
           <div className="col-md-2 col-sm-6 mb-4">
             <h6 className="fw-bold mb-3">Quick Links</h6>
             <ul className="list-unstyled" style={{ fontSize: '15px' }}>
-              <li><Link to="/" className="text-white text-decoration-none">Home</Link></li>
-              <li><Link to="/about" className="text-white text-decoration-none">About Us</Link></li>
-              <li><Link to="/services" className="text-white text-decoration-none">Services</Link></li>
-              <li><Link to="/methodology" className="text-white text-decoration-none">Methodology</Link></li>
+              <li><a href="/" className="text-white text-decoration-none">Home</a></li>
+              <li><a href="/about" className="text-white text-decoration-none">About Us</a></li>
+              <li><a href="/services" className="text-white text-decoration-none">Services</a></li>
+              <li><a href="/methodology" className="text-white text-decoration-none">Methodology</a></li>
             </ul>
           </div>
 
@@ -28,10 +26,10 @@ const Footer = () => {
           <div className="col-md-2 col-sm-6 mb-4">
             <h6 className="fw-bold mb-3">Explore</h6>
             <ul className="list-unstyled" style={{ fontSize: '15px' }}>
-              <li><Link to="/blogs" className="text-white text-decoration-none">Blogs</Link></li>
-              <li><Link to="/careers" className="text-white text-decoration-none">Career</Link></li>
-              <li><Link to="/team" className="text-white text-decoration-none">Team</Link></li>
-              <li><Link to="/contact" className="text-white text-decoration-none">Contact</Link></li>
+              <li><a href="/blogs" className="text-white text-decoration-none">Blogs</a></li>
+              <li><a href="/careers" className="text-white text-decoration-none">Career</a></li>
+              <li><a href="/team" className="text-white text-decoration-none">Team</a></li>
+              <li><a href="/contact" className="text-white text-decoration-none">Contact</a></li>
             </ul>
           </div>
 
