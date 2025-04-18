@@ -128,7 +128,7 @@ const Services = () => {
                 </Container>
             </section>
 
-            <style jsx>{`
+            <style>{`
                 .hero-section {
                     height: 400px;
                     overflow: hidden;

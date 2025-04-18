@@ -124,7 +124,7 @@ const Team = () => {
             </section>
 
             {/* Styles */}
-            <style jsx>{`
+            <style>{`
                 /* Hero Styles */
                 .hero-section {
                     height: 400px;

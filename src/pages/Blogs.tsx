@@ -19,7 +19,7 @@ const Blogs = () => {
                 </Row>
             </Container>
 
-            <style jsx>{`
+            <style>{`
                 .blogs-section {
                     min-height: 300px;
                     display: flex;

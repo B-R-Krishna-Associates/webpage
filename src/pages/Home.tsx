@@ -400,7 +400,7 @@ const Home = () => {
       </section>
 
       {/* Custom CSS */}
-      <style jsx>{`
+      <style>{`
   .home-page {
     overflow-x: hidden;
   }

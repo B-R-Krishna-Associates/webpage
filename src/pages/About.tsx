@@ -130,7 +130,7 @@ const About = () => {
         </Row>
       </Container>
 
-      <style jsx>{`
+      <style>{`
         .hero-section {
           height: 400px;
           overflow: hidden;

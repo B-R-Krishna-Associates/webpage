@@ -19,7 +19,7 @@ const Careers = () => {
                 </Row>
             </Container>
 
-            <style jsx>{`
+            <style>{`
                 .careers-section {
                     min-height: 300px;
                     display: flex;

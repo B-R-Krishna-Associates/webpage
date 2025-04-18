@@ -29,7 +29,7 @@ const NotFoundPage = () => {
                 </Row>
             </Container>
 
-            <style jsx>{`
+            <style>{`
                 .not-found {
                     min-height: 70vh;
                     display: flex;
