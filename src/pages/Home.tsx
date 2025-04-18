@@ -34,7 +34,7 @@ const Home = () => {
     {
       name: 'Tilak Raj Bhandari',
       title: 'CEO, Pearl Softech',
-      message: 'P. & B. Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
+      message: 'B.R. Krishna & Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
       avatar: Testimonail1
     },
     {
