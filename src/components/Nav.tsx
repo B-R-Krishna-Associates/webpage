@@ -19,7 +19,7 @@ const Nav = () => {
           <p style={{
             fontSize: '12px',
             fontWeight: 'bold',
-          }}>B.R. Krishan & Associates</p>
+          }}>B.R. Krishna & Associates</p>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbar-nav" />
