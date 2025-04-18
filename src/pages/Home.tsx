@@ -32,14 +32,14 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'Tilak Raj Bhandari',
-      title: 'CEO, Pearl Softech',
+      name: 'Soharab Ansari',
+      title: 'CEO, Soaa Lifestyles',
       message: 'B.R. Krishna & Associates helped us streamline our audit processes. Their attention to detail is impeccable!',
       avatar: Testimonail1
     },
     {
-      name: 'Nirajan Basnet',
-      title: 'CEO, Vista Clothings',
+      name: 'Dipendra Yadav',
+      title: 'Chairman, Apricity Consultanc',
       message: 'Exceptional service! Their advice has been pivotal in navigating complex tax challenges.',
       avatar: Testimonail2
     },
