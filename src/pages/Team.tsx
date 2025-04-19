@@ -16,8 +16,8 @@ const teamMembers = [
         }
     },
     {
-        name: 'Bijay Maharjan',
-        role: 'Partner',
+        name: 'CA. Hari Thapa',
+        role: 'Adit Manager',
         image: 'https://randomuser.me/api/portraits/men/15.jpg',
         socialLinks: {
             linkedin: '#',
@@ -26,7 +26,7 @@ const teamMembers = [
         }
     },
     {
-        name: 'Aayusha Shrestha',
+        name: 'Nabina Shrestha',
         role: 'Senior Associate',
         image: 'https://randomuser.me/api/portraits/women/22.jpg',
         socialLinks: {
@@ -36,7 +36,7 @@ const teamMembers = [
         }
     },
     {
-        name: 'Saurav Shrestha',
+        name: 'Fatta Buddha Thoki',
         role: 'Associate',
         image: 'https://randomuser.me/api/portraits/men/30.jpg',
         socialLinks: {
@@ -46,7 +46,7 @@ const teamMembers = [
         }
     },
     {
-        name: 'Nisha Adhikari',
+        name: 'Kabita Khatri',
         role: 'Account Executive',
         image: 'https://randomuser.me/api/portraits/women/34.jpg',
         socialLinks: {
@@ -56,7 +56,7 @@ const teamMembers = [
         }
     },
     {
-        name: 'Anish Khadka',
+        name: 'Dipak Yadav',
         role: 'Junior Analyst',
         image: 'https://randomuser.me/api/portraits/men/40.jpg',
         socialLinks: {
